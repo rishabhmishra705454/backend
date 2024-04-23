@@ -9,7 +9,7 @@ To get the backend server up and running, follow these steps
 ### Prerequisites
 
 - Node.js installed on your machine
-- MongoDB installed and running locally or a MongoDB Atlas account
+- MongoDB allready conected 
 
 ### Installation
 
