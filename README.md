@@ -1,4 +1,4 @@
-# Task Management Application - Backend
+# Pesto Task Management Application - Backend
 
 Welcome to the backend repository of our task management application! 
 
