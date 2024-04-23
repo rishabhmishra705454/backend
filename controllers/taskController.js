@@ -15,21 +15,21 @@ exports.getAllTasks = async (req, res) => {
   try {
     let query = { user: req.user._id };
 
-    // Check if there are search terms in the query parameters
+   
     if (req.query.search) {
-      // Define a regular expression to perform a case-insensitive search
+     
       const searchRegex = new RegExp(req.query.search, 'i');
-      // Add the search condition to the query
+    
       query.$or = [
         { title: searchRegex },
         { description: searchRegex }
       ];
     }
 
-    // Check if there are filter parameters in the query
+   
     if (req.query.filter) {
       const filter = req.query.filter;
-      // Add filter conditions to the query based on the filter parameter
+    
       if (filter === 'pending') {
         query.status = 'Pending';
       } else if (filter === 'in progress') {
@@ -37,7 +37,7 @@ exports.getAllTasks = async (req, res) => {
       }else if(filter === 'done'){
         query.status = 'Done';
       }
-      // You can add more filter options based on your application requirements
+     
     }
 
     const tasks = await Task.find(query);

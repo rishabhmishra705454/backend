@@ -15,8 +15,7 @@ const PORT = process.env.PORT || 4000;
 // Middleware
 app.use(bodyParser.json());
 app.use(passport.initialize());
-app.use(cors()); // Enable CORS for all routes
-
+app.use(cors()); 
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
@@ -43,7 +42,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api', passport.authenticate('jwt', { session: false }), taskRoutes);
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/taskproject', {
+mongoose.connect('mongodb+srv://Rm765182:Rm765182@cluster0.xqtqlpz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   
  
 }).then(() => {
